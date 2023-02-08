@@ -5,9 +5,9 @@ ENV VERSAO_MAVEN=3.6.3
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ENV MAVEN_HOME=/opt/maven
-ENV CHROMEDRIVER=110.0.5481.30
+ENV CHROMEDRIVER=110.0.5481.77
 
-RUN apt-get update && apt-get install -y git wget curl software-properties-common openjdk-${VERSAO_JAVA}-jdk openjdk-${VERSAO_JAVA}-jre unzip gettext nano vim
+RUN apt-get update && apt-get install -y git wget curl software-properties-common openjdk-${VERSAO_JAVA}-jdk openjdk-${VERSAO_JAVA}-jre unzip gettext nano vim openssl libnss3-tools
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 RUN apt-get update
 RUN apt-get install google-chrome-stable -y
